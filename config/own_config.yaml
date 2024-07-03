@@ -1,0 +1,52 @@
+adaptive-controller-config:
+  densification-view-space-position-gradients-threshold: 0.000004
+  densification_overlap_tiles_threshold: 16
+  gaussian-split-factor-phi: 1.6
+  num-iterations-densify: 100
+  num-iterations-reset-alpha: 4000
+  num-iterations-warm-up: 500
+  reset-alpha-value: -1.9
+  transparent-alpha-threshold: -2.0
+  floater_num_pixels_threshold: 40000
+  floater_near_camrea_num_pixels_threshold: 30000
+  iteration_start_remove_floater: 2000
+  under_reconstructed_num_pixels_threshold: 256
+  enable_sample_from_point: True
+gaussian-point-cloud-scene-config:
+  max-num-points-ratio: 20.0
+  num-of-features: 56
+  add_sphere: False
+  initial_alpha: -0.0
+  max_initial_covariance: 3000.0
+  initial_covariance_ratio: 0.1
+increase-color-max-sh-band-interval: 1000.0
+out-loss: 1000
+log-image-interval: 200
+log-loss-interval: 10
+log-metrics-interval: 500
+enable_taichi_kernel_profiler: True
+log_taichi_kernel_profile_interval: 3000
+feature_learning_rate: 0.005
+position_learning_rateo: 0.00005
+position_learning_rate_decay_rate: 0.9847
+position_learning_rate_decay_interval: 100
+loss-function-config:
+  lambda-value: 0.2
+  enable_regularization: False
+  regularization_weight: 0.005
+num-iterations: 30000
+#pointcloud-parquet-path: '/home/zhaoyibin/3DRE/3DGS/sat_blender_pose_sem_badlight_taichi/point_cloud.parquet'
+pointcloud-parquet-path: '/home/zhaoyibin/3DRE/3DGS/taichi_3d_gaussian_splatting/logs/save_offical&sigmod/scene_apperance/scene_apperance_net.parquet'
+#起始点，要么选择之前已经重建好的，要么选择稀疏重建的结果
+rasterisation-config:
+  depth-to-sort-key-scale: 10.0
+  far-plane: 2000.0
+  near-plane: 0.4
+summary-writer-log-dir: logs/tat_train_experiment_downsample_warmup
+train-dataset-json-path: '/home/zhaoyibin/3DRE/3DGS/sat_blender_pose_sem_badlight_taichi/train.json'
+val-dataset-json-path: '/home/zhaoyibin/3DRE/3DGS/sat_blender_pose_sem_badlight_taichi/val.json'
+val-interval: 1000
+
+do-instance: True
+#是否仅更新语义
+mask-dataset-json-path: '/home/zhaoyibin/3DRE/3DGS/sat_blender_pose_sem_badlight_taichi/mask.json'

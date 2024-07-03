@@ -4,7 +4,7 @@ for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-ga
 
 
 ## Training:
-```mermaid
+```
 python gaussian_point_train.py --train_config config/own_config.yaml
 ```
 ## Reference:
